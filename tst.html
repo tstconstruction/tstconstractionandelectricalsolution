@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TST Construction & Electrical Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a252f;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f39c12; 
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('picha/welding.jfif') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 70px;
+            height: 800px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366; 
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a252f;
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* 📋 SEHEMU MPYA YA FOMU YA KUOMBA HUDUMA ONLINE */
+        .sehemu-booking {
+            background-color: #fff;
+            padding: 60px 20px;
+            border-top: 4px solid #f39c12;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: auto;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+         .sehemu-ya-slideshow {
+            display: flex;
+            justify-content: space-between; /* Inaacha nafasi katikati yao */
+            gap: 20px; /* Nafasi ndogo ya wazi kati ya slideshow ya kushoto na kulia */
+            width: 100%;
+            max-width: 1200px; /* Unaweza kubadilisha upana kulingana na muundo wa tovuti yako */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Muundo wa kila slideshow (Kushoto na Kulia zinalingana) */
+        .slideshow-container {
+            flex: 1; /* Inazifanya zote mbili zigawane upana sawa wa 50% kila moja */
+            height: 550px; /* Unaweza kuongeza au kupunguza urefu kulingana na picha zako */
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Njia inayobeba picha (kwa ajili ya picha 3) */
+        .slider-wrapper {
+            display: flex;
+            width: 300%; 
+            height: 100%;
+        }
+
+        /* Animation ya slideshow ya KUSHOTO */
+        .slider-wrapper.kushoto {
+            animation: slideShowKushoto 12s infinite ease-in-out; 
+        }
+
+        /* Animation ya slideshow ya KULIA */
+        .slider-wrapper.kulia {
+            animation: slideShowKulia 12s infinite ease-in-out; 
+        }
+
+        .slider-wrapper img {
+            width: 33.33%; 
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Mwendo wa Slideshow ya KUSHOTO */
+        @keyframes slideShowKushoto {
+            0%, 25% { transform: translateX(0); }
+            33%, 60% { transform: translateX(-33.33%); }
+            68%, 95% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Mwendo wa Slideshow ya KULIA (Unaweza kubadilisha asilimia kama unataka zizipane muda) */
+        @keyframes slideShowKulia {
+            0%, 25% { transform: translateX(0); }
+            33%, 60% { transform: translateX(-33.33%); }
+            68%, 95% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+        h4{
+            color: #25d366;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TST CONSTRUCTION</div>
+        <nav>
+            <a href="#nyumbani">Nyumbani</a>
+            <a href="#huduma">Huduma</a>
+            <a href="#kazi-zetu">Kazi Zetu</a>
+            <a href="#omba-huduma">Omba Huduma Online</a>
+        </nav>
+    </header>
+
+    <a href="whatsapp://send?phone=255629012418" class="floating-whatsapp" title="Tuma SMS WhatsApp">💬</a>
+
+    <section id="nyumbani" class="hero">
+        <h1>TST Construction & Electrical Solutions</h1>
+          
+        <p>
+    <strong>TST CONSTRUCTION & ELECTRICAL SOLUTIONS</strong><br>
+    TST CONSTRUCTION & ELECTRICAL SOLUTIONS Ni umoja wa mafundi bora na wabobezi katika fani mbalimbali za ufundi.<br> 
+    TST tunatoa huduma ya:-<br>
+    <h4>1. UFUNDI UJENZI</h4><br>
+    &bull; Tunajenga majengo ya aina mbalimbali katika viwango na ubora wa hali ya juu<br>
+    &bull; Tunabandika malumalu<br>
+   <h4>2. UFUNDI DARI NA RANGI</h4><br>
+    &bull; Tunatengeneza madari ya aina zote<br>
+    &bull; Tunafanya scheming na kupaka rangi<br>
+   <h4>3. UCHOMELEAJI</h4><br>
+    &bull; Tunachomelea magrili na mageti ya aina zote<br>
+    &bull; Tunatengeneza furniture za chuma aina zote Kama vitanda meza na makabati<br>
+   <h4>4. UFUNDI UMEME</h4><br>
+    &bull; Tunatengeneza mifumo ya umeme wa Sola na umeme wa majumbani (wiring)<br>
+    &bull; Tunafanya marekebisho ya mifumo ya umeme inayosumbua<br>
+    TST tunapatikana Iringa Mjini kalibu na kibao cha ofisi ya mkuu wa wilaya.<br> 
+    Kwa matokeo mazuri na ubora wa kazi yako tukabidhi TST nasi tunakuahidi hakika hutokuja kujutia maamuzi yako.<br> 
+    Amua sasa kufanya kazi nasi Kwa gharama nafuu na rafiki kwako nasi tutakufikia popote ulipo ndani ya mkoa wa Iringa.
+</p>>
+        <a href="whatsapp://send?phone=255629012418" class="btn-whatsapp">📲 Tufuate WhatsApp</a>
+    </section>
+
+    <section id="huduma" class="container">
+        <h2>Huduma Zetu Kuu</h2>
+        <div class="services-grid">
+            <div class="card">
+                <img src="picha/dali1.jfif" alt="Dari">
+                <h3>Dari za Gypsum & PVC</h3>
+                <p>Upauaji wa kitaalamu na urembo wa dari za ndani.</p>
+            </div>
+            <div class="card">
+                <img src="picha/umeme.jfif" alt="Umeme">
+                <h3>Mifumo ya Umeme</h3>
+                <p>Wiring salama ya nyumba na taa za urembo.</p>
+            </div>
+            <div class="card">
+                <img src="picha/sola.jpg" alt="Sola">
+                <h3>Mifumo ya Sola</h3>
+                <p>Ufungaji wa umeme wa jua wa kisasa.</p>
+            </div>
+            <div class="card">
+                <img src="picha/nyumba1.jfif" alt="ujenzi wa nyumba">
+                <h3>ujenzi wa nyumba </h3>
+                <p>ujenzi wa nyumba za kisasa, imara na zenye ubora wa hali ya juu</p>
+            </div>
+            <div class="card">
+                <img src="picha/welding.jfif" alt="Vyuma">
+                <h3>Kuchomelea Vyuma</h3>
+                <p>Kutengeneza mageti imara na madirisha ya grill.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="kazi-zetu" class="container">
+        <h2>Maktaba ya Kazi Zetu</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item"><img src="picha/dali2.jfif" alt="Dari 2"></div>
+            <div class="portfolio-item"><img src="picha/nyumba3.jfif" alt="Dari 3"></div>
+            <div class="portfolio-item"><img src="picha/meza1.jpeg" alt="Vyuma 1"></div>
+            <div class="portfolio-item"><img src="picha/welding2.jfif" alt="Vyuma 2"></div>
+            <div class="portfolio-item"><img src="picha/welding3.jfif" alt="Vyuma 3"></div>
+        </div>
+
+    <!-- Hapa ndipo unapoweka ndani ya eneo lako la #nyumbani -->
+    <div class="sehemu-ya-slideshow">
+        
+        <!-- SLIDESHOW YA KUSHOTO (Hii uliyonayo sasa hivi) -->
+        <div class="slideshow-container">
+            <div class="slider-wrapper kushoto">
+                <img src="picha/mabosi.jfif" alt="P">
+                <img src="picha/meza safi ya kioo.jpeg" alt="">
+                <img src="picha/dirisha1.jpeg" alt="">
+            </div>
+        </div>
+
+        <!-- SLIDESHOW YA KULIA (Hii mpya unayotaka kuongeza) -->
+        <div class="slideshow-container">
+            <div class="slider-wrapper kulia">
+                <img src="picha/nyumba3.jfif" alt="">
+                <img src="picha/sola.jpg" alt="">
+                <img src="picha/fundi.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+    
+    
+
+  <!-- 📋 FOMU YA YA KUOMBA HUDUMA ONLINE (ONLINE BOOKING FORM) -->
+<section id="omba-huduma" class="sehemu-booking">
+    <h2>Fomu ya Kuomba Huduma Online</h2>
+    <div class="booking-form">
+        <form id="onlineBookingForm" onsubmit="tumaWhatsApp(event)">
+
+            <div class="form-group">
+                <label>Jina Lako Kamili:</label>
+                <input type="text" id="fullname" required placeholder="Ingiza jina lako">
+            </div>
+
+            <div class="form-group">
+                <label>Namba yako ya Simu:</label>
+                <input type="tel" id="phonenumber" required placeholder="Mfano: 0629012418">
+            </div>
+
+            <div class="form-group">
+                <label>Eneo kazi ilipo:</label>
+                <input type="text" id="location" required placeholder="Mfano: Iringa Mjini">
+            </div>
+
+            <div class="form-group">
+                <label>Chagua Huduma Unayohitaji:</label>
+                <select id="servicetype" required>
+                    <option value="">-- Chagua Huduma --</option>
+                    <option value="Ujenzi wa Nyumba">Ujenzi wa Nyumba</option>
+                    <option value="Dari za Gypsum & PVC">Dari za Gypsum & PVC</option>
+                    <option value="Mifumo ya Umeme (Wiring)">Mifumo ya Umeme (Wiring)</option>
+                    <option value="Ufungaji wa Sola">Ufungaji wa Sola</option>
+                    <option value="Kuchomelea Vyuma (Mageti/Grill)">Kuchomelea Vyuma (Mageti/Grill)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Maelezo Mafupi ya Kazi:</label>
+                <textarea id="workdetails" rows="4" required placeholder="Eleza kwa ufupi unachotaka kifanyike..."></textarea>
+            </div>
+
+        <button type="submit">Tuma Maombi Kupitia WhatsApp</button>
+
+        </form>
+    </div>
+</section>
+
+<script>
+function tumaWhatsApp(event) {
+    // 1. Inazuia fomu isifanye refresh ya ukurasa
+    event.preventDefault();
+
+    // 2. Kuchukua taarifa kutoka kwenye fomu yako
+    var jina = document.getElementById('fullname').value;
+    var simu = document.getElementById('phonenumber').value;
+    var mahali = document.getElementById('location').value;
+    var huduma = document.getElementById('servicetype').value;
+    var maelezo = document.getElementById('workdetails').value;
+
+    // 3. Namba yako ya WhatsApp (Hakikisha haina alama ya + mwanzo)
+    var nambaSimu = "255629012418";
+
+    // 4. Kupanga ujumbe utakaoingia WhatsApp
+    var ujumbe = "*TST CONSTRUCTION & ELECTRICAL SOLUTIONS*\n" +
+                  "*MAOMBI YA HUDUMA ONLINE*\n\n" +
+                  "*Mteja:* " + jina + "\n" +
+                  "*Simu:* " + simu + "\n" +
+                  "*Eneo la Kazi:* " + mahali + "\n" +
+                  "*Huduma:* " + huduma + "\n" +
+                  "*Maelezo:* " + maelezo;
+
+    // 5. Kubadili maandishi kuwa muundo wa URL Encoding
+    var ujumbeUliosafishwa = encodeURIComponent(ujumbe);
+
+    // 6. Kutengeneza anwani thabiti ya WhatsApp API kwa kutumia wa.me
+    var urlWhatsApp = "https://wa.me/" + nambaSimu + "?text=" + ujumbeUliosafishwa;
+
+    // 7. Kufungua WhatsApp kwenye tab mpya
+    window.open(urlWhatsApp, '_blank');
+}
+</script>
+
+
+
+    <footer>
+        <p>📸 Instagram & Facebook: <strong>TST Construction & Electrical Solutions</strong></p>
+        <p>📞 WhatsApp: <strong>+255 629 012 418</strong></p>
+        <p>Tiktok: <strong>TST TST Construction & Electrical Solutions</strong></p>
+        <p style="margin-top: 15px;">&copyright designed by ROBERT MTWANGA 2026 .</p>
+    </footer>
+
+</body>
+</html>
+
