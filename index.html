@@ -459,19 +459,26 @@ function tumaWhatsApp(event) {
 
    
 
-<!-- SEHEMU YA MAONI (CUSDIS COMMENT SECTION) -->
+<!-- SEHEMU YA MAONI (DISQUS COMMENT SECTION) -->
 <div style="margin: 40px auto; max-width: 800px; padding: 20px; font-family: sans-serif;">
     <h2 style="color: #1a252f; border-bottom: 2px solid #1a252f; padding-bottom: 10px;">Maoni na Ushauri</h2>
     
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="902bb2b1-6a2c-47bc-8f4b-014c00bb2bc6"
-      data-page-id="tstconstruction_main_page"
-      data-page-url="https://github.io"
-      data-page-title="Maoni na Ushauri">
-    </div>
-    <script async src="https://cusdis.com"></script>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;  
+            this.page.identifier = window.location.pathname; 
+        };
+        (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://disqus.com';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Tafadhali washa JavaScript ili kuona <a href="https://disqus.com">maoni yanayowezeshwa na Disqus.</a></noscript>
 </div>
+
 
 
 
