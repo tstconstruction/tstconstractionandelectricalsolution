@@ -69,7 +69,7 @@
             color: white;
             padding: 20px;
             margin-top: 70px;
-            height: 800px;
+            height: 860px;
         }
 
         .hero h1 {
@@ -86,8 +86,7 @@
             border-radius: 25px;
             transition: 0.3s;
             display: inline-block;
-            margin-top: 10px;
-            width: 10;
+            width: 50%;
         }
 
         .floating-whatsapp {
@@ -220,7 +219,7 @@
             justify-content: space-between; /* Inaacha nafasi katikati yao */
             gap: 20px; /* Nafasi ndogo ya wazi kati ya slideshow ya kushoto na kulia */
             width: 100%;
-            max-width: 1200px; /* Unaweza kubadilisha upana kulingana na muundo wa tovuti yako */
+            max-width: 500px; /* Unaweza kubadilisha upana kulingana na muundo wa tovuti yako */
             margin: 0 auto;
             padding: 20px;
         }
@@ -228,17 +227,18 @@
         /* Muundo wa kila slideshow (Kushoto na Kulia zinalingana) */
         .slideshow-container {
             flex: 1; /* Inazifanya zote mbili zigawane upana sawa wa 50% kila moja */
-            height: 550px; /* Unaweza kuongeza au kupunguza urefu kulingana na picha zako */
+            height: 300px; /* Unaweza kuongeza au kupunguza urefu kulingana na picha zako */
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             border-radius: 8px;
             position: relative;
+            width: 500%;
         }
 
         /* Njia inayobeba picha (kwa ajili ya picha 3) */
         .slider-wrapper {
             display: flex;
-            width: 200%; 
+            width: 300%; 
             height: 100%;
         }
 
@@ -280,7 +280,7 @@
     /* Msimbo huu utafanya kazi kwenye simu pekee (skrini chini ya pikseli 768) */
 @media (max-width: 768px) {
     /* Inalazimisha menu ipangane kwenda chini badala ya pembeni */
-    nav, .menu-container, header ul {
+    nav, .menu-container, .hero,aQAwwss header ul {
         display: flex !important;
         flex-direction: column !important; 
         align-items: center !important;
@@ -302,8 +302,7 @@
 </head>
 <body>
 
-    <header>
-
+    <header  style="margin-bottom: 100px";>
         <nav>
             <a href="#nyumbani">Nyumbani</a>
             <a href="#huduma">Huduma</a>
@@ -312,12 +311,12 @@
         </nav>
     </header>
 
-    <a href="whatsapp://send?phone=255629012418" class="floating-whatsapp" title="Tuma SMS WhatsApp">💬</a>
+    <a href="whatsapp://send?phone=255629012418" class="floating-whatsapp" title="Tuma SMS WhatsApp" style="margin-top: 10px";>💬</a>
 
-    <section id="nyumbani" class="hero"  style="margin-top: 10px !important;>
+    <section id="nyumbani" class="hero"  style="margin-top: 10px !important ; margin-bottom: 0x;";>
         <!-- Msimbo wa kuweka logo juu ya maandishi -->
 <div style="text-align: center;">
-    <img src="picha/logo.png" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 0px; margin-top: 150px;">
+    <img src="picha/logo.png" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 0px; margin-top: 150px";>
 
         <h1>TST Construction & Electrical Solutions</h1>
           </div>
@@ -341,10 +340,12 @@
     Kwa matokeo mazuri na ubora wa kazi yako tukabidhi TST nasi tunakuahidi hakika hutokuja kujutia maamuzi yako.<br> 
     Amua sasa kufanya kazi nasi Kwa gharama nafuu na rafiki kwako nasi tutakufikia popote ulipo ndani ya mkoa wa Iringa.
 </p>>
-        <a href="whatsapp://send?phone=255629012418" class="btn-whatsapp" >📲 Tufuate WhatsApp</a>
+        
     </section>
 
-    <section id="huduma" class="container"  style="margin-top: 100px !important;">
+    <div><a href="whatsapp://send?phone=255629012418" class="btn-whatsapp" style="margin-top: 80px" >📲 Tufuate WhatsApp</a></div>
+
+    <section id="huduma" class="container"  style="margin-top: 10px !important;  margin-bottom: 100px !important;">
         <h2>Huduma Zetu Kuu</h2>
         <div class="services-grid">
             <div class="card">
@@ -377,7 +378,7 @@
     
     
 
-    <section id="kazi-zetu" class="container"  style="margin-top: 10px !important;>
+    <section id="kazi-zetu" class="container"  style="margin-top: 0px !important; gap: 200px";>
         <h2>Maktaba ya Kazi Zetu</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item"><img src="picha/dali2.jfif" alt="Dari 2"></div>
@@ -499,7 +500,7 @@ function tumaWhatsApp(event) {
         <p>📸 Instagram & Facebook: <strong>TST Construction & Electrical Solutions</strong></p>
         <p>📞 WhatsApp: <strong>+255 629 012 418</strong></p>
         <p>Tiktok: <strong>TST TST Construction & Electrical Solutions</strong></p>
-        <p style="margin-top: 15px;">&copyright designed by ROBERT MTWANGA 2026 .</p>
+        <p style="margin-top: 15px;">&copyright designed by IRINGA FINEST IT 2026 .</p>
     </footer>
 
 </body>
