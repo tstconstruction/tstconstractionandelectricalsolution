@@ -238,7 +238,7 @@
         /* Njia inayobeba picha (kwa ajili ya picha 3) */
         .slider-wrapper {
             display: flex;
-            width: 300%; 
+            width: 200%; 
             height: 100%;
         }
 
@@ -277,7 +277,26 @@
             color: #25d366;
         }
         
-    
+    /* Msimbo huu utafanya kazi kwenye simu pekee (skrini chini ya pikseli 768) */
+@media (max-width: 768px) {
+    /* Inalazimisha menu ipangane kwenda chini badala ya pembeni */
+    nav, .menu-container, header ul {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        gap: 10px !important; /* Nafasi kati ya neno na neno */
+        width: 100% !important;
+        padding: 10px 0 !important;
+    }
+
+    /* Inapunguza ukubwa wa maneno kidogo kwenye simu ili yasiingiliane */
+    header a, .hero a, nav a, header li {
+        font-size: 16px !important; /* Ukubwa mzuri kwa skrini ya simu */
+        text-align: center !important;
+        display: block !important;
+    }
+}
+
 
     </style>
 </head>
@@ -295,7 +314,7 @@
 
     <a href="whatsapp://send?phone=255629012418" class="floating-whatsapp" title="Tuma SMS WhatsApp">💬</a>
 
-    <section id="nyumbani" class="hero"  style="margin-top: 300px !important;>
+    <section id="nyumbani" class="hero"  style="margin-top: 10px !important;>
         <!-- Msimbo wa kuweka logo juu ya maandishi -->
 <div style="text-align: center;">
     <img src="picha/logo.png" alt="Logo" style="max-width: 150px; height: auto; margin-bottom: 0px; margin-top: 150px;">
@@ -358,7 +377,7 @@
     
     
 
-    <section id="kazi-zetu" class="container"  style="margin-top: 500px !important;>
+    <section id="kazi-zetu" class="container"  style="margin-top: 10px !important;>
         <h2>Maktaba ya Kazi Zetu</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item"><img src="picha/dali2.jfif" alt="Dari 2"></div>
