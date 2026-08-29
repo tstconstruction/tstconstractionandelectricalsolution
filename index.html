@@ -59,22 +59,40 @@
         }
 
        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('picha/welding.jfif') no-repeat center center/cover;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            margin-top: 70px;
-            height: 860px;
-        }
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('picha/welding.jfif') no-repeat center center/cover;
+    width: 100%;
+    min-height: 60vh; /* Inajirekebisha yenyewe kulingana na urefu wa skrini */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 70px;
+    box-sizing: border-box; /* Imerekebishwa hapa */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Inatumia rem badala ya px ili ikubali kubadilika */
+    margin-bottom: 16px;
+    margin-top: auto;
+    max-width: 90%; /* Inazuia maneno kugusa kingo za simu */
+}
+
+/* Ongeza hii kwa ajili ya simu pekee */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem !important; /* Inapunguza maandishi makuu kwenye simu */
+    }
+}
+
+
 
         .hero h1 {
             font-size: 40px;
             margin-bottom: 10px;
+            margin-top: auto;
         }
 
         .btn-whatsapp {
